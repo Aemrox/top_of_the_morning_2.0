@@ -11,19 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230055156) do
+ActiveRecord::Schema.define(version: 20151230174135) do
 
   create_table "channels", force: :cascade do |t|
     t.string  "name"
     t.integer "site_id"
+    t.boolean "basic",   default: false
   end
 
   add_index "channels", ["site_id"], name: "index_channels_on_site_id"
 
   create_table "sites", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.string "channel_url"
+    t.string  "name"
+    t.string  "url"
+    t.string  "channel_url"
+    t.boolean "validates",   default: false
   end
 
   create_table "stories", force: :cascade do |t|
