@@ -1,4 +1,4 @@
 class Story < ActiveRecord::Base
   belongs_to :channel
-  include ActiveModel::Validations
+  validates_uniqueness_of :title
 end

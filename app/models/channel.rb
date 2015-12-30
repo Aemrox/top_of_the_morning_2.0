@@ -3,6 +3,8 @@ class Channel < ActiveRecord::Base
   has_many :stories
   has_many :user_channels
   has_many :users, through: :user_channels
+
+  validates_uniqueness_of :name
   include ActiveModel::Validations
 
   def create_story
