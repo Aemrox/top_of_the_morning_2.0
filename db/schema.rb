@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230045912) do
+ActiveRecord::Schema.define(version: 20151230055156) do
 
   create_table "channels", force: :cascade do |t|
     t.string  "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151230045912) do
     t.string  "title"
     t.string  "url"
     t.integer "channel_id"
+    t.integer "points"
   end
 
   add_index "stories", ["channel_id"], name: "index_stories_on_channel_id"
