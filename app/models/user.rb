@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   def self.create(options = {})
     new_user = super(options)
+    #This ensures that when a user is created the receiver all basic channels
     Channel.basic_channels.each do |channel|
       new_user.channels << channel
     end
