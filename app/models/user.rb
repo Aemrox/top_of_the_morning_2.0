@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   has_many :stories, through: :channels
 
   has_secure_password
+
+  
 end
