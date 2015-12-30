@@ -1,0 +1,18 @@
+<h1>Top o' the Morning to ya!</h1>
+<h3>Here are todays stories:</h3>
+
+<br><br>
+
+<ol>
+  <%@stories.each do |story|%>
+  <li>
+    <%=story.full_title%>
+    <%=" - Points: #{story.points}"%>
+    <a href="<%=story.url%>"> - Read More!</a>
+  </li>
+  <%end%>
+</ol>
+
+<br><br>
+
+<h4><a href="/signup">Sign up</a> or <a href="/login">Log in</a> to personalize your stories!</h4>

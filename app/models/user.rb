@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
     new_user.save
     new_user
   end
+
+  def current_stories
+    self.channels.map{|channel| channel.create_story}
+  end
 end

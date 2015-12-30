@@ -1,0 +1,17 @@
+<h1>Top o' the Morning to ya <%=@user.username%>!</h1>
+<h3>Here are todays stories:</h3>
+
+<br><br>
+
+<ol>
+  <%@stories.each do |story|%>
+  <li>
+    <%=story.full_title%>
+    <%=" - Points: #{story.points}"%>
+    <a href="<%=story.url%>"> - Read More!</a>
+  </li>
+  <%end%>
+</ol>
+
+<br><br>
+<h4>Menu: <a href="/add_remove">Add or Remove Channels</a> - <a href="/logout">Logout</a></h4>
