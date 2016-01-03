@@ -5,6 +5,8 @@ ruby "2.2.3"
 gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
+gem 'sinatra-flash'
+gem 'sinatra-redirect-with-flash'
 gem "rake"
 gem "bcrypt"
 gem 'require_all'
