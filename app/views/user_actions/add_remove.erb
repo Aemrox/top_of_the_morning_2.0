@@ -7,20 +7,24 @@
   <h3>Which site would you like to add a source from?</h3>
   <br>
   <%@sites.each do |site|%>
-    <%=site.name%><input type="radio" name="site" value="<%=site.name%>" required>
+    <p>
+      <input type="radio" name="site" value="<%=site.name%>" required> <%=site.name%>
+
+    </p>
   <%end%>
   <br>
   Section: <input type="text" name="modifier" required>
-  <input type="submit" value="Add!">
+  <input class = "button-primary" type="submit" value="Add!">
 </form>
 
 <br><br>
 <h2>Remove:</h2>
-<form action="/add" method="post">
-  <h3>Which of your </h3>
+<form action="/remove" method="post">
+  <h3>Which of your Channels would you like to remove?</h3>
   <br>
   <%@channels.each do |channel|%>
-    <%=channel.name%><input type="radio" name="channel" value="<%=channel.name%>" required>
+    <input type="radio" name="channel" value="<%=channel.name%>" required> <%=channel.full_name%>
+    <br>
   <%end%>
-  <input type="submit" value="Remove!">
+  <input class = "button-primary" type="submit" value="Remove!">
 </form>

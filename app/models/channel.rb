@@ -25,7 +25,7 @@ class Channel < ActiveRecord::Base
   end
 
   def full_name
-    self.basic ? self.name : self.site.name + "-" + self.name
+    self.basic ? self.name : self.site.name + " - " + self.name.capitalize
   end
 
   #Basic Channels

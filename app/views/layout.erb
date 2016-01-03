@@ -10,22 +10,59 @@
 
   <!-- Font -->
   <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <!-- requiring jquery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/javascript/menu.js"></script>
 
 
   <title>Top O' The Morning!</title>
 </head>
   <body>
-      <!-- top banner -->
-      <div class="header-box section">
-        <div class="container">
-          <div class="row">
-            <h1 class = "header-text">Top o' the Morning</h1>
-          </div>
+
+    <!-- menu -->
+
+    <div class="menu">
+
+       <!-- Menu icon -->
+       <div class="icon-close">
+         <p>
+           <img src="/images/close33.png", height = "42", width = "42">
+         </p>
+       </div>
+
+       <!-- Menu -->
+       <ul>
+         <li><a href="/">Home</a></li>
+         <%if logged_in?%>
+           <li><a href="/add_remove">Add/Remove Channels</a></li>
+           <li><a href="/logout">Logout</a></li>
+         <%else%>
+           <li><a href="/login">Log In</a></li>
+           <li><a href="/signup">Sign Up</a></li>
+         <%end%>
+       </ul>
+    </div>
+
+  <!-- top banner -->
+    <div class="header-box section">
+      <div class="icon-menu">
+        <img src="/images/menu33.png", height = "42", width = "42">
+        Menu
+      </div>
+      <div class="container">
+        <div class="row">
+          <h1 class = "header-text">Top o' the Morning</h1>
         </div>
       </div>
-      <!-- main site -->
-      <div class="container">
-        <%= yield %>
-      </div>
+    </div>
+
+
+
+    <!-- main site -->
+    <div class="container">
+      <%= yield %>
+    </div>
+
+
   </body>
 </html>

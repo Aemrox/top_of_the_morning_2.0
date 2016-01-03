@@ -90,6 +90,7 @@ class ApplicationController < Sinatra::Base
       session[:added] = true
       redirect to '/'
     else
+      @sites = Site.expandable
       erb :"user_actions/add_fail"
     end
   end
@@ -110,7 +111,11 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      User.find(session[:user_id])
+      if session[:user_id]
+        User.find(session[:user_id])
+      else
+        false
+      end
     end
   end
 end

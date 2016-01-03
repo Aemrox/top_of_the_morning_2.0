@@ -18,9 +18,14 @@
       <div class="row source">
       <%end%>
         <div class="one-half column">
-          <%=story.full_title%>
-          <%=" - Points: #{story.points}"%>
-          <a href="<%=story.url%>"> - Read More!</a>
+          <p>
+            <%=story.full_title%>
+            <%=" - Points: #{story.points}"%>
+          </p>
+          <p>
+            <iframe src="<%=story.url%>"></iframe>
+          </p>
+          <a href="<%=story.url%>">Read More!</a>
         </div>
       <%if i.even?%>
       </div>
@@ -29,6 +34,5 @@
     <%end%>
   </div>
 </div>
-
-<br><br>
+<!-- bottom menu -->
 <h4>Menu: <a href="/add_remove">Add or Remove Channels</a> - <a href="/logout">Logout</a></h4>
