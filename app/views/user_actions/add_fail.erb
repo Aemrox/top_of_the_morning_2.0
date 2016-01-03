@@ -1,0 +1,13 @@
+<h1>Sorry! not a valid channel. Try again:</h1>
+
+<h2>Add:</h2>
+<form action="/add" method="post">
+  <h3>Which site would you like to add a source from?</h3>
+  <br>
+  <%@sites.each do |site|%>
+    <%=site.name%><input type="radio" name="site" value="<%=site.name%>" required>
+  <%end%>
+  <br>
+  Section: <input type="text" name="modifier" required>
+  <input type="submit" value="Add!">
+</form>

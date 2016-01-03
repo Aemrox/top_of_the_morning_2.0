@@ -8,15 +8,24 @@ class Channel < ActiveRecord::Base
   include ActiveModel::Validations
 
   def create_story
-    if self.basic
-      story_params = self.site.scrape
-    else #if it is not a basic channel, it must pass a modifier, which is it's downcased name
-      story_params = self.site.scrape(modifier)
+    #checks to see
+    if (stories.last) && (time_since_last_story < 600)
+      stories.last
+    else
+      if self.basic
+        story_params = self.site.scrape
+      else #if it is not a basic channel, it must pass a modifier, which is it's downcased name
+        story_params = self.site.scrape(modifier)
+      end
+      new_story = Story.new(story_params)
+      new_story.channel = self
+      new_story.save
+      new_story
     end
-    new_story = Story.new(story_params)
-    new_story.channel = self
-    new_story.save
-    new_story
+  end
+
+  def full_name
+    self.basic ? self.name : self.site.name + "-" + self.name
   end
 
   #Basic Channels
@@ -29,7 +38,15 @@ class Channel < ActiveRecord::Base
     self.save
   end
 
-  private
+  def time_since_last_story
+    now = Time.now
+    if (self.stories.last.updated_at)
+      (now - self.stories.last.updated_at).to_i
+    else
+      0
+    end
+  end
+
   def modifier
     self.name.downcase
   end

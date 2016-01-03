@@ -1,0 +1,33 @@
+/*Headers*/
+h1.header-text {
+  color: #fff;
+  font-family: 'Raleway',sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center; }
+
+.header-box{
+  background-image: url(../images/top-banner.jpg);
+  background-size: cover;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #fff;
+  padding-bottom: 5rem}
+
+/*source boxes */
+.source{
+  background-color: #fff;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section {
+  padding: 8rem 0 7rem;
+  text-align: center;
+}
+
+.section-heading,
+.section-description {
+  margin-bottom: 1.2rem;
+}

@@ -4,6 +4,9 @@ class Site < ActiveRecord::Base
   validates_uniqueness_of :name
   include Scrapable
 
+  def self.expandable #returns an array of all basic channels
+    self.where("validates = ?", true)
+  end
 
   def validates! #makes a site validatable
     self.validates ? self.validates = false : self.validates = true

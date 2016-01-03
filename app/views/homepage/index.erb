@@ -1,17 +1,34 @@
-<h1>Top o' the Morning to ya <%=@user.username%>!</h1>
-<h3>Here are todays stories:</h3>
+<!-- the greeting -->
 
-<br><br>
+<h1>Welcome <%=@user.username%>!</h1>
+<%if @added%>
+  <h3>Channel succesfully added!</h3>
+<%else%>
+  <h3>Here are todays stories:</h3>
+<%end%>
 
-<ol>
-  <%@stories.each do |story|%>
-  <li>
-    <%=story.full_title%>
-    <%=" - Points: #{story.points}"%>
-    <a href="<%=story.url%>"> - Read More!</a>
-  </li>
-  <%end%>
-</ol>
+<!-- display story section -->
+
+
+<div class="container">
+  <div class="source">
+    <%i = 1%>
+    <%@stories.each do |story|%>
+      <%if i.odd?%>
+      <div class="row source">
+      <%end%>
+        <div class="one-half column">
+          <%=story.full_title%>
+          <%=" - Points: #{story.points}"%>
+          <a href="<%=story.url%>"> - Read More!</a>
+        </div>
+      <%if i.even?%>
+      </div>
+      <%end%>
+      <% i +=1 %>
+    <%end%>
+  </div>
+</div>
 
 <br><br>
 <h4>Menu: <a href="/add_remove">Add or Remove Channels</a> - <a href="/logout">Logout</a></h4>

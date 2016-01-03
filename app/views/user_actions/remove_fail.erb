@@ -1,0 +1,11 @@
+<h1>Sorry! Something went wrong. Try again:</h1>
+
+<h2>Remove:</h2>
+<form action="/add" method="post">
+  <h3>Which of your </h3>
+  <br>
+  <%@channels.each do |channel|%>
+    <%=channel.name%><input type="radio" name="channel" value="<%=channel.name%>" required>
+  <%end%>
+  <input type="submit" value="Remove!">
+</form>

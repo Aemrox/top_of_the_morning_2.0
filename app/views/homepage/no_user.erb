@@ -1,9 +1,31 @@
+<!-- the greeting -->
 <h1>Top o' the Morning to ya!</h1>
 <h3>Here are todays stories:</h3>
 
-<br><br>
+<!-- display story section -->
 
-<ol>
+
+<div class="container">
+  <div class="source">
+    <%i = 1%>
+    <%@stories.each do |story|%>
+      <%if i.odd?%>
+      <div class="row source">
+      <%end%>
+        <div class="one-half column">
+          <%=story.full_title%>
+          <%=" - Points: #{story.points}"%>
+          <a href="<%=story.url%>"> - Read More!</a>
+        </div>
+      <%if i.even?%>
+      </div>
+      <%end%>
+      <% i +=1 %>
+    <%end%>
+  </div>
+</div>
+
+<!-- <ol>
   <%@stories.each do |story|%>
   <li>
     <%=story.full_title%>
@@ -13,6 +35,6 @@
   <%end%>
 </ol>
 
-<br><br>
+<br><br> -->
 
 <h4><a href="/signup">Sign up</a> or <a href="/login">Log in</a> to personalize your stories!</h4>

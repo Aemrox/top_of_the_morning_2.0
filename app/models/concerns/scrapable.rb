@@ -22,14 +22,16 @@ module Scrapable
     end
   end
 
-
-  #StackOverflow
-  #Reddit
-  #Hackernews
-  module Validator
-    #holds all the various validator codes
-    #ProductHunt
-    #StackOverflow
-    #Reddit
+  def validate(tag)
+    case self.name
+    when "Reddit"
+      RedditValidator.validate(tag)
+    when "Product Hunt"
+      ProductHuntValidator.validate(tag)
+    when "Stack Overflow"
+      StackOverflowValidator.validate(tag)
+    else
+      false
+    end
   end
 end

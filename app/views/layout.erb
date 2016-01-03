@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
+  <!-- Basic -->
+  <meta charset="utf-8">
+  <!-- Link stylesheets -->
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+  <!-- Font -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+
   <title>Top O' The Morning!</title>
 </head>
   <body>
-    <%= yield %>
+      <!-- top banner -->
+      <div class="header-box section">
+        <div class="container">
+          <div class="row">
+            <h1 class = "header-text">Top o' the Morning</h1>
+          </div>
+        </div>
+      </div>
+      <!-- main site -->
+      <div class="container">
+        <%= yield %>
+      </div>
   </body>
 </html>

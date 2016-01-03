@@ -3,11 +3,6 @@ class Story < ActiveRecord::Base
   validates_uniqueness_of :title
 
   def full_title
-    if self.channel.basic
-      title = self.channel.name + ": " + self.title
-    else
-      title = self.channel.site.name + " - " + self.channel.name + ": " + self.title
-    #   title = story.channel.site.name + " - " story.channel.name + ": " + story.title
-    end
+    self.channel.full_name + ": " + self.title
   end
 end
