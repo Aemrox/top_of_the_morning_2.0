@@ -50,6 +50,7 @@ GEM
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     ntlm-http (0.1.1)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -126,6 +127,7 @@ DEPENDENCIES
   activerecord
   bcrypt
   nokogiri
+  pg
   pry
   pry-nav
   rake

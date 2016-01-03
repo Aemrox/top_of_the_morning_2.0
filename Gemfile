@@ -8,7 +8,7 @@ gem "sinatra-activerecord"
 gem "rake"
 gem "bcrypt"
 gem 'require_all'
-gem "pry"
+
 
 #for scraping/API work
 gem "nokogiri"
@@ -17,6 +17,9 @@ gem 'ruby_reddit_api', '~> 0.2.6'
 gem 'ruby-hackernews', '~> 1.3', '>= 1.3.7'
 gem 'ruby-stackoverflow'
 
+group :production do
+ gem 'pg'
+end
 
 group :development do
 	gem "pry"
