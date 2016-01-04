@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require(:default, :development, :production)
 
-db = URI.parse(ENV['DATABASE_URL'] || URI.parse('postgres://user:pass@localhost/db/topofthemorning_development')
+db =  URI.parse(ENV['DATABASE_URL']) || URI.parse('postgres://user:pass@localhost/db/topofthemorning_development')
 
 ActiveRecord::Base.establish_connection(
   :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
