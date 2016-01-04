@@ -27,6 +27,8 @@ end
 
 task :show_channel_sites do
   Channel.all.each do |channel|
+    puts channel.name
     puts channel.site
+    puts channel.site.name
   end
 end
