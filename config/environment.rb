@@ -2,7 +2,8 @@ require 'bundler'
 Bundler.require(:default, :development, :production)
 
 configure :development do
-	set :database, {adapter: "sqlite3", database: "db/database.sqlite3"}
+ set :database, 'sqlite:///dev.db'
+ set :show_exceptions, true
 end
 
 configure :production do
