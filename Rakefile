@@ -18,3 +18,9 @@ task :update_stories do #force updates stories without checking time since last 
     new_story
   end
 end
+
+task :show_sites do
+  Site.all.each do |site|
+    puts site
+  end
+end
