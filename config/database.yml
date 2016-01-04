@@ -3,6 +3,7 @@ default: &default
   pool: 5
   encoding: SQL_ASCII
   timeout: 5000
+  port: 5432
 
 development:
   <<: *default
