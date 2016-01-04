@@ -24,3 +24,9 @@ task :show_sites do
     puts site
   end
 end
+
+task :show_channel_sites do
+  Channel.all.each do |channel|
+    puts channel.site
+  end
+end
