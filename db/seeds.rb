@@ -7,16 +7,16 @@
 
 #Basic Channels
   front_page = Channel.create(name: "Reddit - Front Page", basic: true)
-  front_page.channel=Site.find_by(name:"Reddit")
+  front_page.site=Site.find_by(name:"Reddit")
   front_page.save
   hacker_top = Channel.create(name: "Hacker News", basic: true)
-  hacker_top.channel=Site.find_by(name:"Hacker News")
+  hacker_top.site=Site.find_by(name:"Hacker News")
   hacker_top.save
   product_tech = Channel.create(name: "Product Hunt - Tech", basic: true)
-  product_tech.channel=Site.find_by(name:"Product Hunt")
+  product_tech.site=Site.find_by(name:"Product Hunt")
   product_tech.save
   stack_ruby = Channel.create(name: "Stack Overflow - Ruby", basic: true)
-  stack_ruby.channel=Site.find_by(name:"Stack Overflow")
+  stack_ruby.site=Site.find_by(name:"Stack Overflow")
   stack_ruby.save
 
 #Super User
