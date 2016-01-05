@@ -22,4 +22,4 @@ require_all 'app/models'
 require "open-uri"
 require "json"
 
-set :public_folder, File.join(APP_ROOT, "public")
+set :public_folder, File.join(root, "public")
