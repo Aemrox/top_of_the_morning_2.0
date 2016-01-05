@@ -4,8 +4,9 @@ require "./app/models/user"
 class ApplicationController < Sinatra::Base
 
   set :views, Proc.new { File.join(root, "../views/") }
+  set :public_folder, File.join(root, "../../public")
 
-  
+
   configure do
     set :views, "app/views"
     enable :sessions
