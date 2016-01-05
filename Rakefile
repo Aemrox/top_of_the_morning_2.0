@@ -29,6 +29,16 @@ task :show_channel_sites do
   Channel.all.each do |channel|
     puts channel.name
     puts channel.site
-    puts channel.site.name
+    if channel.site.name
+      puts channel.site.name
+    else
+      puts channel.name + " has an issue"
   end
+end
+
+task :clear_db_and_models do
+  Channel.destroy_all
+  Site.destroy_all
+  Story.destroy_all
+  User.destroy_all
 end

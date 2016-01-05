@@ -7,6 +7,9 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_PASS'] %>
   database: db/topofthemorning_development
 
 # Warning: The database defined as "test" will be erased and
