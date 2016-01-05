@@ -33,6 +33,7 @@ task :show_channel_sites do
       puts channel.site.name
     else
       puts channel.name + " has an issue"
+    end
   end
 end
 
