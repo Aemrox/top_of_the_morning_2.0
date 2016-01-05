@@ -19,10 +19,10 @@ gem 'ruby_reddit_api', '~> 0.2.6'
 gem 'ruby-hackernews', '~> 1.3', '>= 1.3.7'
 gem 'ruby-stackoverflow'
 gem 'postgresql'
+gem 'pg'
 
-group :production do
- gem 'pg'
-end
+gem 'pry'
+
 
 group :development do
 	gem 'pry'
