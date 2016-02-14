@@ -11,10 +11,11 @@ class ProductHuntScraper
   end
 
   def top_story
-    top_article = product_scrape.css("#app > div > div > div > ul > li:nth-child(1) > div > div > div.container > ul > li:nth-child(1) > div")
-    title = top_article.css("div.information_3xzIn > a").text
-    story_url = "https://www.producthunt.com#{top_article.css("div.information_3xzIn > a").attribute("href").value}"
-    points = top_article.css("a > span.post-vote-button--count").text.to_i
+    top_article = product_scrape.css("ul.posts--group > li > div")
+    title = top_article.css("div:nth-child(3) > a").first.text
+    binding.pry
+    story_url = "https://www.producthunt.com#{top_article.css("div:nth-child(3) > a").first.attribute("href").value}"
+    points = top_article.css("a > span.post-vote-button--count").first.text.to_i
 
     story_params = {
       title: title,
