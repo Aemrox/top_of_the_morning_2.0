@@ -13,7 +13,7 @@ module Scrapable
       RedditScraper.new(modifier).top_story
     when "Product Hunt"
       !!modifier ? category = modifier : category = "tech"
-      ProductHuntScraper.new(category).top_story
+      ProductHuntScraper.new(category).under_construction
     when "Stack Overflow"
       !!modifier ? tag = modifier : tage = "ruby"
       StackOverflowScraper.new(tag).top_story
